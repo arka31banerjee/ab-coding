@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Home
+ *
+ */
+module DesignPatternExamples {
+}

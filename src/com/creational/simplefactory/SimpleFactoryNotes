@@ -1,0 +1,4 @@
+Advantage :
+Very easy to implement & we can avoid several imports, as object creation is dynamic
+Pitfalls :
+Criteria to get an object using static simpleFactory method may get complicated with numbers of product introduction

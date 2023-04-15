@@ -1,0 +1,30 @@
+Plan : To build an object through builder class
+Client providing required info through input User class.
+==========================================================================
+D E S I G N :
+
+TYPE#1 :
+BuilderInterface will be implemented by required Concrete Builder classes.
+Example :
+WebDTOBuilder implements DTOBuilder
+RestDTOBuilder implements DTOBuilder
+
+Goal of Builder class :: Make object of other classes
+Example : 
+WebDTOBuilder will make WebDTO object.
+RestDTOBuilder will make RestDTO object.[** WebDTO/RestDTO[Immutable] is child of UserDTO]
+
+TYPE#2 :
+ConcreteDTO class should have a getBuilder method, which will return the builder object.
+Concrete builder class is nested static class inside DTO.
+DTO class members and setters are private to maintain immutability.
+===========================================================================
+C O N S I D E R A T I O N : 
+When there are large number of constructor arguments and immutable objects need to be created for that class.
+If there is no need of abstraction at DTO layer[Only 1 type of object is required] then TYPE#2 design is preferable.
+===========================================================================
+P I T F A L L S :
+1. Method chaining[A method is returning the object itself] may get complicated
+2. Possibility of partially initialized object may lead to an error occurring condition. So, have to consider exception handling.
+===========================================================================
+BUILDER vs PROTOTYPE :
